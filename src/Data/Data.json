@@ -1,0 +1,183 @@
+{
+  "kpi": [
+    {
+      "id": 1,
+      "label": "Total Customers",
+      "value": "1,248",
+      "growth": "+12.5% from last month",
+      "icon": "<LuUsersRound/>",
+      "color": "blue"
+    },
+    {
+      "id": 2,
+      "label": "Total Sales",
+      "value": "₹8,45,000",
+      "growth": "+18.2% from last month",
+      "icon": "PiCurrencyInrBold",
+      "color": "green"
+    },
+    {
+      "id": 3,
+      "label": "Total Purchase",
+      "value": "₹5,25,000",
+      "growth": "+8.4% from last month",
+      "icon": "purchase",
+      "color": "orange"
+    },
+    {
+      "id": 4,
+      "label": "Total Products",
+      "value": "856",
+      "growth": "+5.6% from last month",
+      "icon": "products",
+      "color": "purple"
+    },
+    {
+      "id": 5,
+      "label": "Total Stock",
+      "value": "12,450",
+      "growth": "+8.2% from last month",
+      "color": "blue"
+    },
+    {
+      "id": 6,
+      "label": "Low Stock",
+      "value": "32",
+      "growth": "Needs attention",
+      "color": "orange"
+    },
+    {
+      "id": 7,
+      "label": "Out of Stock",
+      "value": "8",
+      "growth": "Requires restocking",  "color": "red"
+    }
+  ],
+  "stockOverview": [
+    {
+      "id": 1,
+      "product": "Laptop",
+      "sku": "LAP001",
+      "category": "Electronics",
+      "stock": 45,
+      "minStock": 10,
+      "status": "In Stock"
+    },
+    {
+      "id": 2,
+      "product": "Wireless Mouse",
+      "sku": "MOU002",
+      "category": "Accessories",
+      "stock": 5,
+      "minStock": 10,
+      "status": "Low Stock"
+    },
+    {
+      "id": 3,
+      "product": "Keyboard",
+      "sku": "KEY003",
+      "category": "Accessories",
+      "stock": 0,
+      "minStock": 5,
+      "status": "Out of Stock"
+    },
+    {
+      "id": 4,
+      "product": "Office Chair",
+      "sku": "CHR004",
+      "category": "Furniture",
+      "stock": 28,
+      "minStock": 8,
+      "status": "In Stock"
+    },
+    {
+      "id": 5,
+      "product": "USB Cable",
+      "sku": "USB005",
+      "category": "Accessories",
+      "stock": 7,
+      "minStock": 10,
+      "status": "Low Stock"
+    }
+  ],
+  "lowStockProducts": [
+    {
+      "id": 1,
+      "product": "Wireless Mouse",
+      "sku": "MOU002",
+      "stock": 5
+    },
+    {
+      "id": 2,
+      "product": "USB Cable",
+      "sku": "USB005",
+      "stock": 7
+    },
+    {
+      "id": 3,
+      "product": "Keyboard",
+      "sku": "KEY003",
+      "stock": 0
+    }
+  ],
+  "stockMovement": [
+    {
+      "id": 1,
+      "product": "Laptop",
+      "type": "Stock In",
+      "quantity": 20,
+      "date": "12 Sep 2026",
+      "reference": "PO-1001"
+    },
+    {
+      "id": 2,
+      "product": "Wireless Mouse",
+      "type": "Stock Out",
+      "quantity": -5,
+      "date": "11 Sep 2026",
+      "reference": "SO-2045"
+    },
+    {
+      "id": 3,
+      "product": "Keyboard",
+      "type": "Stock In",
+      "quantity": 15,
+      "date": "10 Sep 2026",
+      "reference": "PO-1000"
+    },
+    {
+      "id": 4,
+      "product": "Office Chair",
+      "type": "Stock Out",
+      "quantity": -4,
+      "date": "09 Sep 2026",
+      "reference": "SO-2041"
+    }
+  ],
+  "categoryStock": [
+    {
+      "id": 1,
+      "category": "Electronics",
+      "stock": 4250,
+      "description": "Products in stock"
+    },
+    {
+      "id": 2,
+      "category": "Accessories",
+      "stock": 3850,
+      "description": "Products in stock"
+    },
+    {
+      "id": 3,
+      "category": "Furniture",
+      "stock": 2150,
+      "description": "Products in stock"
+    },
+    {
+      "id": 4,
+      "category": "Office Supplies",
+      "stock": 2200,
+      "description": "Products in stock"
+    }
+  ]
+}
