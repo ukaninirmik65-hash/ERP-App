@@ -1,11 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext,} from "react";
 import Inventory from "./Inventory";
-import { LuUsersRound } from "react-icons/lu";
-import { PiCurrencyInrBold, PiWarningFill } from "react-icons/pi";
-import { FaBoxes, FaOpencart } from "react-icons/fa";
 import { ClockLoader } from "react-spinners";
-import { MdDoNotDisturbAlt } from "react-icons/md";
-import { VscGraph } from "react-icons/vsc";
 import { SidebarContext } from "../context/SidebarContext";
 import { StokSummary } from "./StokSummary";
 

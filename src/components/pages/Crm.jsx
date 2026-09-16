@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SidebarContext } from "../context/SidebarContext";
-import CostomerData from "../CostomerData";
+import CostomerData from "../CostomerData.jsx";
 
 const Crm = () => {
   const { setNotificationCount, search } = useContext(SidebarContext);
@@ -24,7 +24,7 @@ const Crm = () => {
     priceList: "",
     status: "Active",
   };
-  
+
   const [customer, setCustomer] = useState(initialCustomer);
   const [customers, setCustomers] = useState([]);
   const [confomDelete, setConformDelete] = useState(false);
