@@ -9,7 +9,7 @@ export const SidebarProvider = ({ children }) => {
   const [notificationCount, setNotificationCount] = useState(0);
   const [data, setData] = useState([]);
   const [loding, setLoding] = useState(false);
-  const fetchData = "/public/Data/Data.json";
+  const fetchData = "/Data/Data.json";
 
   async function GetData(api) {
     try {
