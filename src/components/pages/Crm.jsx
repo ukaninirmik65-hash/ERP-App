@@ -97,7 +97,6 @@ const Crm = () => {
     if (!selectCutomer) return;
     setCustomer(selectCutomer);
     setEdit(selectCutomer);
-    console.log(selectCutomer);
   }
 
   return (

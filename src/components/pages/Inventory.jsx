@@ -5,7 +5,6 @@ const Inventory = ({ data }) => {
     acc[key].push(item);
     return acc;
   }, {});
-  console.log("grupr", grouped);
   return (
     <div className="inventory-page">
       <div className="dashboard-card inventory-table-card">

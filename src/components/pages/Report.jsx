@@ -17,7 +17,6 @@ const Reports = () => {
     label: item.label,
     value: Number(item.value.replace(/[₹,]/g, "")),
   }));
-  console.log(chartData);
   return (
     <div
       style={{
