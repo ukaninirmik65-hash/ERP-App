@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Delete from "./Delete";
+import Delete from "../components/Delete";
 
 const CostomerData = ({
   filteredCustomers,
