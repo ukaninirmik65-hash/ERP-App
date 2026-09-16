@@ -5,7 +5,7 @@ const ComingSoon = () => {
     <div className="coming-soon">
       <div className="coming-soon-content">
         <div className="coming-soon-icon">
-          <img src="./src/assets/maintenance.png" alt="" />
+          <img src="./assets/maintenance.png" alt="" />
         </div>
 
         <h2>Feature Coming Soon</h2>
