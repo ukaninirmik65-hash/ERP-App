@@ -11,7 +11,7 @@ const Header = () => {
       {/* Logo */}
       <div className="header-logo">
         <div className="logo-icon">
-          <img src="./public/erp.png" alt="" />
+          <img src="/erp.png" alt="" />
         </div>
         <span>ERP</span>
       </div>
