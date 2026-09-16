@@ -2250,3 +2250,54 @@ a {
     font-size: 14px;
   }
 }
+
+/* =========================================================
+   SORT BUTTON
+========================================================= */
+
+.sort-btn {
+  height: 40px;
+  min-width: 100px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border: 1px solid #dbe3ec;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #374151;
+
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.1s ease;
+}
+
+.sort-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #1f2937;
+}
+
+.sort-btn:active {
+  transform: translateY(1px);
+}
+
+.sort-btn:focus-visible {
+  outline: none;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.sort-btn-icon {
+  font-size: 16px;
+  line-height: 1;
+}

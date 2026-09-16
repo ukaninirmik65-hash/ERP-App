@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Delete from "./Delete";
-
+import CustomerTab from "./CostomerTab";
+import { FaSortAlphaDown } from "react-icons/fa";
 const CostomerData = ({
   filteredCustomers,
   confomDelete,
@@ -11,37 +12,40 @@ const CostomerData = ({
   handelEditBtn,
 }) => {
   const [activeTab, setActiveTab] = useState("All");
-
+  const [sortOrder, setSortOrder] = useState("z-a");
   const customers =
     activeTab === "All"
       ? filteredCustomers
       : filteredCustomers.filter((customer) => customer.status === activeTab);
 
+  const sortedCustomers = customers.sort((a, b) => {
+    return sortOrder === "a-z"
+      ? a.customerName.localeCompare(b.customerName)
+      : b.customerName.localeCompare(a.customerName);
+  });
   return (
     <div className="customer-table-wrapper">
       <div className="customer-table-header">
         <h2>Customer List</h2>
-
-        <div className="customer-tabs">
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginTop: "10px",
+          }}
+        >
+          <CustomerTab setActiveTab={setActiveTab} activeTab={activeTab} />
           <button
-            className={activeTab === "All" ? "active" : ""}
-            onClick={() => setActiveTab("All")}
+            className="sort-btn"
+            onClick={() => {
+              setSortOrder(sortOrder === "a-z" ? "z-a" : "a-z");
+            }}
           >
-            All
-          </button>
-
-          <button
-            className={activeTab === "Active" ? "active" : ""}
-            onClick={() => setActiveTab("Active")}
-          >
-            Active
-          </button>
-
-          <button
-            className={activeTab === "Inactive" ? "active" : ""}
-            onClick={() => setActiveTab("Inactive")}
-          >
-            Inactive
+            <span className="sort-btn-icon">
+              <FaSortAlphaDown />
+            </span>
+            Sort
           </button>
         </div>
       </div>
@@ -63,8 +67,8 @@ const CostomerData = ({
           </thead>
 
           <tbody>
-            {customers.length > 0 ? (
-              customers.map((customer, index) => (
+            {sortedCustomers.length > 0 ? (
+              sortedCustomers.map((customer, index) => (
                 <tr key={index}>
                   <td>{customer.customerCode}</td>
                   <td>{customer.customerName}</td>
