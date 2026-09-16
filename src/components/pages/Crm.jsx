@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SidebarContext } from "../context/SidebarContext";
-import CostomerData from "../../Data/CostomerData.jsx";
+import CostomerData from "../CostomerData";
 
 const Crm = () => {
   const { setNotificationCount, search } = useContext(SidebarContext);
