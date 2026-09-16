@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { products } from "../../Data/Data.js";
+import { products } from "../../../public/Data/Data.js";
 import Card from "../Card.jsx";
 import { SidebarContext } from "../context/SidebarContext.jsx";
 
