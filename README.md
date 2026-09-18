@@ -667,8 +667,6 @@ The `SidebarContext` is used to manage common application state.
 
 The context is used for values such as:
 
-- `activePage`
-- `setActivePage`
 - `isCollapsed`
 - `setIsCollapsed`
 - `search`

@@ -4,7 +4,6 @@ export const SidebarContext = createContext(null);
 
 export const SidebarProvider = ({ children }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [activePage, setActivePage] = useState("Dashboard");
   const [search, setSearch] = useState("");
   const [notificationCount, setNotificationCount] = useState(0);
   const [data, setData] = useState([]);
@@ -40,8 +39,6 @@ export const SidebarProvider = ({ children }) => {
       value={{
         isCollapsed,
         setIsCollapsed,
-        activePage,
-        setActivePage,
         search,
         HeandleSearch,
         notificationCount,

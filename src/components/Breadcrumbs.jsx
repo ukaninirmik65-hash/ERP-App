@@ -1,9 +1,10 @@
-import { useContext } from "react";
 import { MdHome, MdChevronRight } from "react-icons/md";
-import { SidebarContext } from "./context/SidebarContext";
+import { useLocation } from "react-router";
 
 const Breadcrumbs = () => {
-  const { activePage } = useContext(SidebarContext);
+  const location = useLocation();
+  const currentPath = location.pathname;
+ const fixe = currentPath.split("/").filter(Boolean).join(" ");
   return (
     <div className="breadcrumbs">
       <div className="breadcrumb-item">
@@ -14,7 +15,7 @@ const Breadcrumbs = () => {
       <MdChevronRight className="breadcrumb-arrow" />
 
       <div className="breadcrumb-item">
-        <span>{activePage}</span>
+        <span>{fixe.charAt(0).toUpperCase() + fixe.slice(1)}</span>
       </div>
     </div>
   );
