@@ -6,7 +6,6 @@ import Sales from "./pages/Sales";
 import Kpi from "./pages/KpiCard";
 import Reports from "./pages/Report";
 import { StokSummary } from "./pages/StokSummary";
-import Inventory from "./pages/Inventory";
 import Purchase from "./pages/Purchase";
 import { Manufacturing } from "./pages/Manufacturing";
 import { Users } from "./pages/Users";
