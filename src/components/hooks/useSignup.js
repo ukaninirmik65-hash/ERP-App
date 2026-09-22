@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { SidebarContext } from "../context/SidebarContext";
 
-export function useSignup(setLogin, login) {
+export function useSignup() {
     const [error, setError] = useState("")
     const [isSingup, setSingup] = useState(false);
+    const { login, setLogin } = useContext(SidebarContext);
     const [password, setPassword] = useState({
         username: "",
         email: "",

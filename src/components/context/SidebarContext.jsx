@@ -8,9 +8,11 @@ export const SidebarProvider = ({ children }) => {
   const [notificationCount, setNotificationCount] = useState(0);
   const [data, setData] = useState([]);
   const [loding, setLoding] = useState(false);
-
+  const [login, setLogin] = useState(false);
   const fetchData = "/Data/Data.json";
-
+  const handleLogout = () => {
+    setLogin(false);
+  };
   async function GetData(api) {
     try {
       setLoding(true);
@@ -49,6 +51,9 @@ export const SidebarProvider = ({ children }) => {
         setLoding,
         GetData,
         loding,
+        login,
+        setLogin,
+        handleLogout,
       }}
     >
       {children}

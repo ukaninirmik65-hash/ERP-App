@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Breadcrumbs from "./Breadcrumbs";
 import Crm from "./pages/Crm";
 import { SidebarContext } from "./context/SidebarContext";
@@ -17,39 +17,34 @@ import LoginSignup from "./LoginSignup";
 
 export const Deshbord = () => {
   const { data } = useContext(SidebarContext);
-  const [login, setLogin] = useState(false);
 
   return (
     <>
       <Breadcrumbs />
 
       <div className="dashboard-content">
-        {login === false ? (
-          <LoginSignup setLogin={setLogin} login={login} />
-        ) : (
-          <Routes>
-            {/* Default Dashboard */}
-            <Route
-              path="/dashboard"
-              element={
-                <>
-                  <StokSummary data={data} />
-                  <Reports />
-                </>
-              }
-            />
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/crm" element={<Crm />} />
-            <Route path="/sales" element={<Sales />} />
-            <Route path="inventory" element={<Kpi />} />
-            <Route path="reports" element={<Reports />} />
-            <Route path="purchase" element={<Purchase />} />
-            <Route path="users" element={<Users />} />
-            <Route path="settings" element={<Settings />} />
-            <Route path="manufacturing" element={<Manufacturing />} />
-            <Route path="accounting" element={<Account />} />
-          </Routes>
-        )}
+        <Routes>
+          {/* Default Dashboard */}
+          <Route
+            path="/dashboard"
+            element={
+              <>
+                <StokSummary data={data} />
+                <Reports />
+              </>
+            }
+          />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/crm" element={<Crm />} />
+          <Route path="/sales" element={<Sales />} />
+          <Route path="inventory" element={<Kpi />} />
+          <Route path="reports" element={<Reports />} />
+          <Route path="purchase" element={<Purchase />} />
+          <Route path="users" element={<Users />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="manufacturing" element={<Manufacturing />} />
+          <Route path="accounting" element={<Account />} />
+        </Routes>
       </div>
     </>
   );
