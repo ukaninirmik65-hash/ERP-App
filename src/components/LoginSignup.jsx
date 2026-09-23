@@ -1,11 +1,31 @@
-import { useSignup } from "./hooks/useSignup.js";
-
-const LoginSignup = ({ setLogin }) => {
-  const { isSingup, error, password, HandelInputs, handleSignup, setSingup } =
-    useSignup(setLogin);
+import { useContext, useState } from "react";
+import { SidebarContext } from "./context/SidebarContext.jsx";
+import { useForgetPassword, useSignup } from "./hooks/useSignup.js";
+const LoginSignup = () => {
+  const { setLogin } = useContext(SidebarContext);
+  const [isForgotPassword, setIsForgotPassword] = useState(false);
+  const {
+    isSingup,
+    error,
+    password,
+    HandelInputs,
+    handleSignup,
+    setSingup,
+    setPassword,
+    handleUpdatePassword,
+  } = useSignup(setLogin);
+  const User = useForgetPassword();
 
   const handleForgotPassword = () => {
-    alert("Forgot Password clicked");
+    if (!User) {
+      return;
+    }
+    setPassword({
+      username: User.username,
+      email: User.email,
+      password: "",
+    });
+    setIsForgotPassword(true);
   };
 
   return (
@@ -16,7 +36,7 @@ const LoginSignup = ({ setLogin }) => {
           <p>Login to your account</p>
         </div>
 
-        <form onSubmit={handleSignup}>
+        <form onSubmit={isForgotPassword ? handleUpdatePassword : handleSignup}>
           <div className="form-group">
             <label>Name</label>
             <input
@@ -65,13 +85,17 @@ const LoginSignup = ({ setLogin }) => {
           {error && <p className="error">{error}</p>}
 
           <button type="submit" className="btn btn-primary auth-submit">
-            {isSingup ? "Sign Up" : "Login"}
+            {isForgotPassword
+              ? "Update Password"
+              : isSingup
+                ? "Sign Up"
+                : "Login"}
           </button>
         </form>
 
         <div className="auth-bottom">
           Don't have an account?
-          <button type="button" onClick={()=>setSingup(!isSingup)}>
+          <button type="button" onClick={() => setSingup(!isSingup)}>
             Sign Up
           </button>
         </div>

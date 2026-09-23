@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-
 export const SidebarContext = createContext(null);
 
 export const SidebarProvider = ({ children }) => {
@@ -8,11 +7,16 @@ export const SidebarProvider = ({ children }) => {
   const [notificationCount, setNotificationCount] = useState(0);
   const [data, setData] = useState([]);
   const [loding, setLoding] = useState(false);
-  const [login, setLogin] = useState(false);
+
+  const [login, setLogin] = useState(
+    localStorage.getItem("isLoggedIn") !== null,
+  );
+
   const fetchData = "/Data/Data.json";
   const handleLogout = () => {
     setLogin(false);
   };
+  
   async function GetData(api) {
     try {
       setLoding(true);
